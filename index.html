@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+      user-scalable="no"
+    />
+    <title id="title">아직도 펴?</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>아직도 펴?</h1>
+    <!-- 금연 시작 -->
+    <div id="firstDiv">
+      <span class="help">올해는 진짜 끊으셔야죠</span>
+      <span class="help">저희가 도와드릴게요.</span>
+      <button id="startBtn" class="btn">금연 시작하기</button>
+    </div>
+    <form id="login-form" class="hidden fadein_animation">
+      <label for="username">닉네임 : </label>
+      <input
+        id="inputName"
+        name="username"
+        class="block inputStyle"
+        maxlength="15"
+        type="text"
+        required
+      />
+      <label for="dambae">하루 평균 흡연량(개비) : </label>
+      <input
+        id="inputDambae"
+        name="dambae"
+        class="block inputStyle"
+        type="number"
+        maxlength="10"
+        required
+      />
+      <input id="submitBtn" class="btn" type="submit" value="확인" />
+    </form>
+    <!-- 위시리스트 -->
+    <button id="wishbtn" class="hidden btn smallFontSize">위시리스트</button>
+    <div id="wishDiv" class="hidden">
+      <form id="wish-form" class="fadein_animation">
+        <span class="block">원하는 물건 :</span>
+        <input
+          class="inputStyle"
+          id="inputProduct"
+          name="productname"
+          type="text"
+          maxlength="10"
+          required
+        />
+        <span class="block">가격 :</span>
+        <input
+          class="inputStyle block"
+          id="inputPrice"
+          name="productprice"
+          type="number"
+          maxlength="10"
+          required
+        />
+        <input id="wishsubmit" type="submit" class="btn" value="확인" />
+        <div id="wish-list"></div>
+      </form>
+      <button id="gotohome" class="btn smallFontSize">돌아가기</button>
+    </div>
+    <!-- 설정 -->
+    <button id="configbtn" class="hidden btn">정보 수정</button>
+    <div id="configDiv" class="hidden fadein_animation">
+      <form id="config-form">
+        <label for="updatename">닉네임 : </label>
+        <input
+          id="updateName"
+          name="updatename"
+          class="block inputStyle"
+          maxlength="15"
+          type="text"
+          required
+        />
+        <label for="updatedambae">하루 평균 흡연량(개비) : </label>
+        <input
+          id="updateDambae"
+          name="updatedambae"
+          class="block inputStyle"
+          type="number"
+          maxlength="10"
+          required
+        />
+        <input id="updatesubmit" class="btn" type="submit" value="확인" />
+      </form>
+      <button id="gotohome2" class="btn smallFontSize">돌아가기</button>
+    </div>
+    <button id="boardbtn" class="hidden btn">소통해요</button>
+    <!-- 금연 시간 -->
+    <div id="timerdiv" class="hidden">
+      <span id="timer">00:00:00:00</span>
+      <div id="tspan">
+        <span id="timerText">일</span>
+        <span id="timerText">시</span>
+        <span id="timerText">분</span>
+        <span id="timerText">초</span>
+      </div>
+      <!-- 금연 초기화 -->
+      <div>
+        <button id="resetBtn" class="btn">시간 초기화</button>
+      </div>
+      <div id="maindiv">
+        <span id="report"></span>
+        <span class="smallFontSize">님의 금연 리포트 (일수 기준)</span>
+        <span class="subColor block">지금까지 아낀돈 : </span>
+        <span id="saveMoney" class="middleFontSize">지금까지 아낀돈 : </span>
+        <span class="subColor block">안피운 담배 :</span>
+        <span id="tobacco" class="middleFontSize">안피운 담배 :</span>
+        <span class="subColor block">늘어난 수명 : </span>
+        <span id="saveLife" class="middleFontSize"></span>
+      </div>
+    </div>
+    <!--스크립트 -->
+    <script src="userinfo.js"></script>
+    <script src="timer.js"></script>
+    <script src="save.js"></script>
+    <script src="wish.js"></script>
+    <script src="style.js"></script>
+    <script src="config.js"></script>
+  </body>
+</html>

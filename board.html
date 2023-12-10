@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+      user-scalable="no"
+    />
+    <title id="title">아직도 펴?</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>아직도 펴?</h1>
+    <button id="gotohome3" class="btn smallFontSize">돌아가기</button>
+    <button id="boardbtn" class="btn">글 목록</button>
+    <button id="writebtn" class="btn">글 쓰기</button>
+    <div id="boardlist"></div>
+    <form
+      id="wish-form"
+      class="fadein_animation hidden"
+      action="http://localhost:3000/boardwrite"
+      method="post"
+    >
+      <span class="block">제목</span>
+      <input
+        class="titleStyle"
+        id="inputTitle"
+        name="titlename"
+        maxlength="100"
+        required
+      />
+      <span class="block">내용</span>
+      <textarea
+        class="contentStyle block"
+        id="inputContent"
+        name="contentname"
+        maxlength="500"
+        cols="100"
+        rows="5"
+        required
+      ></textarea>
+      <input id="wishsubmit" type="submit" class="btn" value="확인" />
+    </form>
+    <form
+      id="wish-form2"
+      class="fadein_animation hidden"
+      action="http://localhost:3000/boardedit"
+      method="post"
+    >
+      <span class="block">제목</span>
+      <input
+        class="titleStyle"
+        id="editTitle"
+        name="titlename"
+        maxlength="100"
+        readonly
+        required
+      />
+      <span class="block">내용</span>
+      <textarea
+        class="contentStyle block"
+        id="editContent"
+        name="contentname"
+        maxlength="500"
+        cols="100"
+        rows="5"
+        readonly
+        required
+      ></textarea>
+      <input id="boardno" class="hidden" name="boardnoname" type="text" />
+      <!-- 수정버튼을 누르면 readonly 없애, 그후 확인버튼을 보이게. -->
+      <input
+        id="editconfirm"
+        type="submit"
+        class="btn hidden"
+        value="확인"
+        disabled
+      />
+    </form>
+    <button id="editcontentbtn" class="btn hidden">수정</button>
+    <button id="deletecontentbtn" class="btn hidden">삭제</button>
+    <script src="board.js"></script>
+  </body>
+</html>
